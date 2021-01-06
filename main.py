@@ -2,10 +2,6 @@ from random import choice
 import numpy as np
 from PIL import Image
 
-face_type = 2
-face = True
-color = get_rand_rgb()
-
 def get_rand_color():
     return int(choice(range(0, 255)))
 
@@ -15,6 +11,11 @@ def get_rand_rgb():
     g = get_rand_color()
     b = get_rand_color()
     return (r, g, b)
+
+# PARAMETERS
+face_type = 2
+face = True
+color = get_rand_rgb()
 
 
 data = np.zeros((48, 64, 3), dtype=np.uint8)
@@ -126,3 +127,4 @@ for item in datas:
 
 img.putdata(newData)
 img.save("skin_tr.png", "PNG")
+
